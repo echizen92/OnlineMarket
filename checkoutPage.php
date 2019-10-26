@@ -71,7 +71,7 @@ else
     
 //$sqlScript = "INSERT INTO forms (addressbox) VALUES ('$address')";
     
-    $query = "insert into Orders(userID,status) select orderID from Carts; insert into Orders (status) values (Pending); insert into orderDetails (deliveryAddress) values ('$address'); insert into orderDetails (productID) select (productID) from Products; insert into orderDetails (orderID) select (orderID) from Orders";
+    $query = "insert into Orders(userID,status) select cartID from Carts; insert into Orders (status) values (Pending); insert into orderDetails (deliveryAddress) values ('$address'); insert into orderDetails (productID) select (productID) from Products; insert into orderDetails (orderID) select (orderID) from Orders";
     mysqli_multi_query($con,$query);
 
     mysqli_close($con);
