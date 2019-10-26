@@ -56,9 +56,11 @@ DROP TABLE IF EXISTS `CustomerReview`;
 
 CREATE TABLE CustomerReview (
 messageID INT AUTO_INCREMENT PRIMARY KEY, 
-sellerID INT, 
+productID INT, 
+customerID INT, 
 message VARCHAR(255),
-FOREIGN KEY (sellerID) REFERENCES Users (userID)
+FOREIGN KEY (customerID) REFERENCES Users (userID)
+FOREIGN KEY (productID) REFERENCES Products (productID)
 );
 
 DROP TABLE IF EXISTS `Orders`;
